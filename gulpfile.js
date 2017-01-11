@@ -25,7 +25,7 @@ gulp.task('scss', function () {
 	return gulp.src('scss/style.scss')
 		.pipe(sass())
 		.pipe(autoprefixer())
-		.pipe(cleanCSS())
+		/*.pipe(cleanCSS())*/
 		.pipe(rename("common.css"))
 		.pipe(gulp.dest('app/css'))
 		.pipe(connect.reload());

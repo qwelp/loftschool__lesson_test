@@ -1,1 +1,305 @@
-body{background:#fff}p{border-color:#4b4b4b;color:#343434}.border{margin:8px;padding:8px;display:inline-block;border:2px solid #4b4b4b}
+/* MIXINS */
+.inlineblock {
+  display: inline-block;
+  vertical-align: top; }
+
+/*
+@extend %clearfix;
+*/
+.header {
+  *zoom: 1; }
+  .header:before, .header:after {
+    content: " ";
+    display: table; }
+  .header:after {
+    clear: both; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  font-family: fira_sanslight, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: #727272;
+  font-size: 14px;
+  font-size: 0.875rem;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100%; }
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+h2, h3 {
+  padding: 0;
+  margin: 0; }
+
+h2 {
+  font-family: 'fira_sansregular';
+  font-size: 42px;
+  line-height: 42px;
+  color: #212121;
+  text-align: center; }
+
+.container {
+  width: 940px;
+  margin: 0 auto; }
+
+.wrapper, .footer {
+  min-width: 940px; }
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  overflow: hidden; }
+  .wrapper__empty {
+    position: relative;
+    height: 72px; }
+
+.footer {
+  position: relative;
+  margin-top: -72px;
+  height: 72px;
+  background: #212121; }
+  .footer__desc {
+    display: table;
+    width: 100%; }
+    .footer__desc_col {
+      font-family: 'fira_sansregular';
+      color: #ffffff;
+      font-size: 14px;
+      opacity: .5;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      height: 72px;
+      padding-left: 215px;
+      padding-right: 215px; }
+
+.header {
+  background: #8cc34b;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2); }
+  .header__left {
+    float: left; }
+  .header__right {
+    float: right; }
+
+.user, .smo {
+  height: 90px; }
+
+.user {
+  display: table; }
+  .user__col {
+    display: table-cell;
+    vertical-align: middle; }
+  .user__col:first-child {
+    padding-right: 17px; }
+  .user__avatar_img {
+    vertical-align: middle; }
+  .user__name {
+    font-family: fira_sansmedium;
+    font-size: 21px;
+    color: #ffffff;
+    margin-bottom: 4px; }
+  .user__email {
+    font-family: fira_sansregular;
+    font-size: 14px;
+    color: #ffffff;
+    opacity: .7; }
+
+.smo {
+  display: table; }
+  .smo__col {
+    display: table-cell;
+    vertical-align: middle; }
+    .smo__col:not(:first-child) {
+      padding-left: 20px; }
+  .smo__link {
+    display: inline-block;
+    font-family: FontAwesome; }
+  .smo__icon {
+    font-family: FontAwesome;
+    font-size: 35px;
+    color: #ffffff;
+    opacity: .7; }
+    .smo__icon:hover {
+      opacity: 1; }
+
+.info {
+  padding-top: 75px;
+  margin-bottom: 65px; }
+  .info__title {
+    padding: 0;
+    margin-bottom: 20px; }
+  .info__desc {
+    font-family: 'fira_sanslight';
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 41px; }
+  .info__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 460px; }
+    .info__item:last-child {
+      margin-left: 20px; }
+    .info__item_wrap {
+      display: table;
+      width: 100%; }
+    .info__item_col {
+      display: table-cell;
+      vertical-align: top; }
+      .info__item_col:first-child {
+        padding-right: 20px; }
+    .info__item_title {
+      font-family: 'fira_sansregular';
+      font-size: 21px;
+      color: #212121;
+      margin-bottom: 10px; }
+    .info__item_desc p {
+      font-family: 'fira_sanslight';
+      line-height: 21px; }
+    .info__item_link {
+      font-family: 'fira_sanslight';
+      position: relative;
+      color: #03a9f4;
+      text-decoration: none;
+      display: inline-block; }
+      .info__item_link:hover {
+        text-decoration: none; }
+      .info__item_link:before {
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        content: "";
+        display: block;
+        background: #03a9f4;
+        height: 1px;
+        width: 100%; }
+
+.course {
+  padding-bottom: 85px;
+  padding-top: 75px;
+  background: url("../images/gplaypattern.png") repeat; }
+  .course__title {
+    padding: 0;
+    margin-bottom: 20px; }
+  .course__desc {
+    font-family: 'fira_sanslight';
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 41px; }
+  .course__items {
+    margin-left: -20px;
+    margin-top: -25px; }
+  .course__item {
+    display: inline-block;
+    width: 300px;
+    margin-left: 20px;
+    vertical-align: top;
+    background: #fff;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 25px; }
+    .course__item label {
+      cursor: pointer; }
+    .course__item_row:not(:first-child) {
+      padding: 13px 20px; }
+    .course__item_row:first-child {
+      position: relative; }
+      .course__item_row:first-child img {
+        vertical-align: middle; }
+      .course__item_row:first-child:after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        content: "";
+        display: block;
+        height: 5px;
+        background: #8cc34b;
+        display: none; }
+    .course__item_row:last-child {
+      background: #f6f7f2;
+      padding-bottom: 20px; }
+    .course__item_link {
+      font-family: 'fira_sansmedium';
+      font-size: 21px;
+      line-height: 22px;
+      color: #212121;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 11px; }
+    .course__item_desc {
+      margin-bottom: 10px; }
+    .course__item_check {
+      margin-right: 25px; }
+    .course__item_label {
+      position: relative;
+      top: 3px;
+      left: 2px; }
+      .course__item_label:before {
+        position: absolute;
+        z-index: 100;
+        top: -1px;
+        left: -1px;
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #b6b6b6;
+        background: #fff;
+        border-radius: 2px; }
+      .course__item_label_text {
+        font-family: 'fira_sansregular';
+        position: relative;
+        top: 4px;
+        color: #727272;
+        font-size: 18px; }
+    .course__item_clock {
+      font-family: 'fira_sanslight';
+      font-size: 14px;
+      color: #b6b6b6; }
+      .course__item_clock:before {
+        display: inline-block;
+        font-family: FontAwesome;
+        content: "\f017"; }
+    .course__item:hover .course__item_link {
+      color: #8cc34b; }
+    .course__item:hover .course__item_row:first-child:after {
+      display: block; }
+  .course__check {
+    display: none;
+    width: 100%; }
+    .course__check_text {
+      font-family: 'fira_sansmedium';
+      font-size: 41px;
+      color: #8cc34b;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      height: 500px; }
+      .course__check_text:before {
+        font-family: FontAwesome;
+        content: "\f00c";
+        margin-right: 10px; }
+
+.course__item_label_active:before {
+  border-color: #acd27d;
+  background: #acd27d;
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: #ffffff;
+  text-align: center;
+  line-height: 16px; }
+
+.course__item_label_check {
+  color: #8cc34b; }
+
+.course__item_row_active {
+  background: #eff7e6; }
